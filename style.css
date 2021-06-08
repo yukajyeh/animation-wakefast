@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 body {
+    
     font-family: 'Pacifico', cursive;
     font-size: 24px;
     line-height: 1.55;
-
     background-color: #ffffff;
     color: #000000;
- 
 }
+
+
 
 h2 {
     font-size: 85px;
@@ -39,6 +40,7 @@ header nav {
 header nav a {
     margin: 0 0 0 24px;
     color: #000000;
+    text-decoration: none;
 }
 
 section {
