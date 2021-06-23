@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+@keyframes rotate {
+    0% {
+        transform: translate(-50%,-50%) rotate(0);
+    }
+    100% {
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
+}
+
 body {
     
     font-family: 'Pacifico', cursive;
@@ -40,6 +49,22 @@ header nav a {
     margin: 0 0 0 24px;
     color: #000000;
     text-decoration: none;
+    position: relative;
+    padding: 0 0 10px 0;
+}
+
+header nav a img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+    transition: clip-path 0.5s;
+}
+
+header nav a:hover img {
+    clip-path: polygon(0 0,0 100%, 100% 100%, 100% 0);
+    
 }
 
 section {
@@ -63,6 +88,10 @@ figure {
     max-width: 700px;
     margin: 0 auto 0 auto;
     position:relative;
+}
+
+figure img {
+    max-width: 100%;
 }
 
 
@@ -90,7 +119,7 @@ figcaption img{
     top: 0;
     left:0;
     width:100%;
-    max-width:500px;
+    max-width:600px;
     opacity: 0;
     transition: opacity 0.5s 0.5s;
 }
@@ -107,5 +136,40 @@ figcaption img:nth-child(3){
     transition-delay: 1.5s;
 }
 
+div.cursor, div.cursor-outer {
+    display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 600px){
+    body, a, a:hover {
+        cursor: none;
+    }
+
+    div.cursor {
+        display: block;
+        position: absolute;
+        top: 32px;
+        left: 32px;
+        width: 20px;
+        height: 20px;
+        background-image: url(./assets/cursor.svg);
+        pointer-events: none;
+        transform: translate(-50%,-50%);
+    }
+
+    div.cursor-outer {
+        display: block;
+        position: absolute;
+        top: 32px;
+        left: 32px;
+        width: 100px;
+        height: 100px;
+        background-image: url(./assets/rotating-cursor.png);
+        background-size: 100px 100px;
+        pointer-events: none;
+        transform: translate(-50%,-50%);
+        animation: rotate 20s infinite linear;
+    }
+}
 
 
