@@ -65,12 +65,20 @@ figure {
     position:relative;
 }
 
+
+
 figcaption {
     position:absolute;
     top: 70%;
     left: 100%;
-    width: 70%;
+    width: 50%;
     transform: translate(-50%,-50%);
+}
+
+figcaption:before {
+    content: "";
+    padding: 160% 0 0 0;
+    display:block;
 }
 
 section.salmon figcaption {
@@ -78,13 +86,25 @@ section.salmon figcaption {
 }
 
 figcaption img{
-    width: 70%;
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    max-width:500px;
     opacity: 0;
-    
+    transition: opacity 0.5s 0.5s;
 }
 
 figcaption.in-view img{
     opacity: 1;
+}
+
+figcaption img:nth-child(2) {
+    transition-delay: 1s;
+}
+
+figcaption img:nth-child(3){
+    transition-delay: 1.5s;
 }
 
 
