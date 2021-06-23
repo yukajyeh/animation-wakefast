@@ -90,11 +90,10 @@ figure {
     position:relative;
 }
 
+
 figure img {
     max-width: 100%;
 }
-
-
 
 figcaption {
     position:absolute;
